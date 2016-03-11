@@ -22,19 +22,19 @@
 
 ### Order of priority
 
-1) Weather - Have weather app with current and 5 day forecast and the ability to change direction and temp type.
-2) An Alarm app - with all the features outlined above.
-3) Improve the weather app to use TTS and say the weather for the day (Like google now does).
-4) Integrate weather and alarm.
-5) Integrate basic calender function - Display calender and open app
-6) Show agenda and link with google maps for travel time (if possible).
+1. Weather - Have weather app with current and 5 day forecast and the ability to change direction and temp type.
+2. An Alarm app - with all the features outlined above.
+3. Improve the weather app to use TTS and say the weather for the day (Like google now does).
+4. Integrate weather and alarm.
+5. Integrate basic calender function - Display calender and open app
+6. Show agenda and link with google maps for travel time (if possible).
 
 ## Simple Actions for __Basic__ Weather
 
 1. When the app opens it will receive the users location from sensors
-  a. Include location permissions into manifest
-  b. Store location as a variable
-  b. Convert location data into (long, lat) to WOEID
+  * Include location permissions into manifest
+  * Store location as a variable
+  * Convert location data into (long, lat) to WOEID
 
     YQL = ```YQL SELECT * FROM geo.places WHERE text="{$seedLat}, {$seedLong}" AND placeTypeName.code = 7```
 
@@ -42,11 +42,11 @@
 
 2. Pull data from Yahoo weather api using user location
 3. Parse JSON data retrieved from Yahoo
-  a. Deal with failure - Display snackbar/dialog to inform of failure, "ERROR, try again later"
-  b. On success continue to run app.
+  * Deal with failure - Display snackbar/dialog to inform of failure, "ERROR, try again later"
+  * On success continue to run app.
 4. With data parsed display output using imageViews (Current condition, 5 day forecast) and textViews for current condition, temp, location, any other relevant data.
-  a. Use relative layout for current weather.
-  b. Use listArray for 5-day forecast - LinearLayout Vertical
+  * Use relative layout for current weather.
+  * Use listArray for 5-day forecast - LinearLayout Vertical
 5. Set refresh rate - Every 30 minutes? (Make adjustable by user between 15 mins - 24 hours)
 
 ## Simple Actions for Alarm
@@ -55,24 +55,24 @@
 2. Have a floating button to add alarms at the bottom
 3. When creating alarm use floating time picker
 4. On alarm creation expand new alarm settings to allow for settings
-  a. Repeat
-  b. Ringtone
-  c. Label
-  d. Vibrate
-  e. DELETE
+  * Repeat
+  * Ringtone
+  * Label
+  * Vibrate
+  * DELETE
 5. Option to toggle alarm on and off will always be visible
 6. On deletion display snackbar informing of deletion and allow for undo
 
 ## Simple actions for Improved Weather
 
 1. Allow user to change location
-  a. Populate a list of locations or provide suggestions for location as user types? (Not sure how to do either).
+ * Populate a list of locations or provide suggestions for location as user types? (Not sure how to do either).
 2. Have each location as a weather object
-  a. location
-  b. Current weather condition
-  c. current temp
-  d. 5-day forecast
+  * Location
+  * Current weather condition
+  * Current temp
+  * 5-day forecast
 3. Implement a button to add a new location
 4. New button to speak the current weather.
-  a. Example: The weather in $location is currently $condition and is $temperature degrees $metric/imperial.
+  * Example: The weather in $location is currently $condition and is $temperature degrees $metric/imperial.
 5. Use a switch statement to add extra comment. See activity diagram Weather.png
